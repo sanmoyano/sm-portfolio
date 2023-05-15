@@ -5,6 +5,7 @@ import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 
 import theme from '@/theme/theme'
 import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 // import Layout from '
 
@@ -23,11 +24,12 @@ export default function RootLayout ({
       <head>
         <link href='https://use.typekit.net/nvb0lhh.css' rel='stylesheet' />
       </head>
-      <body style={{ height: '3000px' }}>
+      <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <ChakraProvider theme={theme}>
           <Header />
           {children}
+          <Footer />
         </ChakraProvider>
       </body>
     </html>

@@ -3,6 +3,9 @@ import React from 'react'
 import { motion, AnimatePresence, useCycle } from 'framer-motion'
 import { Link, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
 
+import ContactIcons from '@/components/contactIcons'
+import { icons } from '@/data/incons'
+
 import Bar from '../bar'
 
 import Toggle from './toggle'
@@ -13,9 +16,9 @@ interface MobileProps {
 
 const Mobile:React.FC<MobileProps> = ({ topPosition }) => {
   const [isOpen, setIsOpen] = useCycle(false, true)
-  const bgColor = useColorModeValue('white', 'black')
+  const bgColor: string = useColorModeValue('white', 'black')
   const { colors } = useTheme()
-  const colorText = useColorModeValue(`${colors.red}`, `${colors.green}`)
+  const colorText: string = useColorModeValue(`${colors.red}`, `${colors.green}`)
 
   const handlerMenu = () => {
     setIsOpen()
@@ -77,7 +80,7 @@ const Mobile:React.FC<MobileProps> = ({ topPosition }) => {
                   smoyano.di@gmail.com
                 </Text>
               </Link>
-              {/* <ContactIcons icons={icons} /> */}
+              <ContactIcons icons={icons} />
             </Stack>
           </Stack>
         )}

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Stack } from '@chakra-ui/react'
+import { Stack, Text } from '@chakra-ui/react'
 
 import Title from '@/components/titles'
 // import { floatAnimation } from '@/utils/floatAnimation'

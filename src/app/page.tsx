@@ -12,12 +12,12 @@ import Contact from '@/sections/contact'
 const Home : NextPage = () => {
   return (
     <VStack gap={{ base: 20, md: 40 }} paddingInline={{ base: 6, lg: 12 }}>
-      {/* <Hero />
+      <Hero />
       <Marquee />
       <About />
       <Projects />
       <Skills />
-      <Contact /> */}
+      <Contact />
     </VStack>
   )
 }

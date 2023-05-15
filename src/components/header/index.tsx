@@ -1,28 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { Stack, Spinner } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
+import { Stack } from '@chakra-ui/react'
 
 import Logo from '../logo'
 
+import Desktop from './navbar/desktop'
+import Mobile from './navbar/mobile'
 import SpringScroll from './spring'
-
-// const Desktop = lazy(() => import('./navbar/desktop/index'))
-const Desktop = dynamic(() => import('./navbar/desktop/index'), {
-  loading: () => (
-    <Stack alignItems='center' as='div' height='30px' justifyContent='center' width='50px'>
-      <Spinner as='div' size='lg' />
-    </Stack>
-  )
-})
-
-const Mobile = dynamic(() => import('./navbar/mobile/index'), {
-  loading: () => (
-    <Stack alignItems='center' as='div' height='30px' justifyContent='center' width='50px'>
-      <Spinner as='div' size='lg' />
-    </Stack>
-  )
-})
 
 const Header : React.FC = () => {
   const headerHeigth: number = 90

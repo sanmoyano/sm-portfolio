@@ -26,7 +26,9 @@ const Mobile:React.FC<MobileProps> = ({ topPosition }) => {
     closed: { opacity: 0, x: '-100%' }
   }
 
-  isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset'
+  }
 
   return (
     <Stack display={{ base: 'flex', lg: 'none' }}>

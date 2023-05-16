@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { motion, AnimatePresence, useCycle } from 'framer-motion'
 import { Link, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'

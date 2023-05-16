@@ -11,14 +11,18 @@ import Contact from '@/sections/contact'
 
 const Home : NextPage = () => {
   return (
-    <VStack gap={{ base: 20, md: 40 }} paddingInline={{ base: 6, lg: 12 }}>
-      <Hero />
-      <Marquee />
+    <>
+      <main>
+        <VStack gap={{ base: 20, md: 40 }} paddingInline={{ base: 6, lg: 12 }}>
+          <Hero />
+          {/* <Marquee />
       <About />
       <Projects />
       <Skills />
-      <Contact />
-    </VStack>
+      <Contact /> */}
+        </VStack>
+      </main>
+    </>
   )
 }
 

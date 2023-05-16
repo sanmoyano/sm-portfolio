@@ -1,11 +1,9 @@
-'use client'
 import React from 'react'
 import { Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 interface IconProps {
   fill: string,
-  // display: string,
   isRotate: boolean
 }
 
@@ -24,7 +22,6 @@ const StarIcon: React.FC<IconProps> = ({ fill, isRotate }) => {
       animate={isRotate ? 'hover' : 'inital'}
       as={motion.div}
       boxSize='20px'
-      // display={display}
       sx={{ display: 'flex', alignItems: 'center' }}
       variants={variants}
       whileHover='hover'

@@ -5,17 +5,17 @@ import { AnimatePresence } from 'framer-motion'
 
 import ParallaxContainer from '@/components/parallax'
 
-import HeroImage from './heroImage'
+// import HeroImage from './heroImage'
 
 const Hero: React.FC = () => {
-  const [isImageLoading, setImageLoading] = useState(false)
+  // const [isImageLoading, setImageLoading] = useState(false)
 
   return (
     <AnimatePresence>
       <ParallaxContainer>
         <Stack id='1'>
           <Stack>
-            <HeroImage loadingHandlers={{ isImageLoading, setImageLoading }} />
+            {/* <HeroImage loadingHandlers={{ isImageLoading, setImageLoading }} /> */}
           </Stack>
         </Stack>
       </ParallaxContainer>

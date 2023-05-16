@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { IconButton, useColorMode } from '@chakra-ui/react'
 import { VscColorMode } from 'react-icons/vsc'

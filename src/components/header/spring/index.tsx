@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { motion, useSpring, useScroll } from 'framer-motion'

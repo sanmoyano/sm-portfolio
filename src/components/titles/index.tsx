@@ -1,4 +1,3 @@
-'use client'
 import React, { LegacyRef } from 'react'
 import { Box, Text, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'

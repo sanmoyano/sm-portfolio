@@ -2,7 +2,7 @@
 import React from 'react'
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { ParallaxProvider } from 'react-scroll-parallax'
-import { CacheProvider } from '@chakra-ui/next-js'
+// import { CacheProvider } from '@chakra-ui/next-js'
 
 import theme from '@/theme/theme'
 interface ProvidersProps {
@@ -10,14 +10,16 @@ interface ProvidersProps {
 }
 const Providers: React.FC<ProvidersProps> = ({ children }) => {
   return (
-    <CacheProvider>
+    <>
+      {/* <CacheProvider> */}
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider theme={theme}>
         <ParallaxProvider>
           {children}
         </ParallaxProvider>
       </ChakraProvider>
-    </CacheProvider>
+      {/* </CacheProvider> */}
+    </>
   )
 }
 

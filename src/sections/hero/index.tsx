@@ -11,13 +11,15 @@ const Hero: React.FC = () => {
   const [isImageLoading, setImageLoading] = useState(false)
 
   return (
-    <ParallaxContainer>
-      <Stack id='1'>
-        <Stack>
-          <HeroImage loadingHandlers={{ isImageLoading, setImageLoading }} />
+    <AnimatePresence>
+      <ParallaxContainer>
+        <Stack id='1'>
+          <Stack>
+            <HeroImage loadingHandlers={{ isImageLoading, setImageLoading }} />
+          </Stack>
         </Stack>
-      </Stack>
-    </ParallaxContainer>
+      </ParallaxContainer>
+    </AnimatePresence>
   )
 }
 

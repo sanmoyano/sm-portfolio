@@ -1,17 +1,23 @@
 'use client'
-import React from 'react'
-import { Stack, Text } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Stack } from '@chakra-ui/react'
+import { AnimatePresence } from 'framer-motion'
 
-import Title from '@/components/titles'
-// import { floatAnimation } from '@/utils/floatAnimation'
+import ParallaxContainer from '@/components/parallax'
+
+import HeroImage from './heroImage'
 
 const Hero: React.FC = () => {
-  // const float: string = floatAnimation()
+  const [isImageLoading, setImageLoading] = useState(false)
 
   return (
-    <Stack>
-      <Title content='HERO' textStyle='h1' />
-    </Stack>
+    <ParallaxContainer>
+      <Stack id='1'>
+        <Stack>
+          <HeroImage loadingHandlers={{ isImageLoading, setImageLoading }} />
+        </Stack>
+      </Stack>
+    </ParallaxContainer>
   )
 }
 

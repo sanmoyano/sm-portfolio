@@ -1,6 +1,6 @@
 'use client'
 import { NextPage } from 'next'
-import { Stack, VStack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 
 import Hero from '@/sections/hero'
 import Marquee from '@/sections/marquee'

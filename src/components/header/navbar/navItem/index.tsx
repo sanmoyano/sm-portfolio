@@ -6,11 +6,11 @@ import Link from 'next/link'
 import StarIcon from '@/components/starIcon'
 
 interface NavItemProps {
-  item: string,
+  sectionName: string,
   route: string
 }
 
-const NavItem: React.FC<NavItemProps> = ({ route, item }) => {
+const NavItem: React.FC<NavItemProps> = ({ route, sectionName }) => {
   const [isHovered, setHovered] = useState(false)
   const { colors } = useTheme()
   const fill = useColorModeValue(`${colors.black}`, `${colors.white}`)
@@ -20,10 +20,10 @@ const NavItem: React.FC<NavItemProps> = ({ route, item }) => {
       <Stack
         alignItems='center'
         direction='row'
-        display={{ base: item === 'contact' ? 'none' : 'flex', lg: 'flex' }}
+        display={{ base: sectionName === 'contact' ? 'none' : 'flex', lg: 'flex' }}
       >
         <StarIcon fill={fill} isRotate={isHovered} />
-        <Text textStyle='navigation'>{item}</Text>
+        <Text textStyle='navigation'>{sectionName}</Text>
       </Stack>
     </Link>
   )

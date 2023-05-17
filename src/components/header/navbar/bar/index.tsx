@@ -12,27 +12,32 @@ const Bar: React.FC = () => {
       route: '/'
     },
     {
-      name: 'about',
-      route: '#about'
-    },
-    {
       name: 'projects',
       route: '/projects'
-    },
-    {
-      name: 'skills',
-      route: '#skills'
-    },
-
-    {
-      name: 'contact',
-      route: '#contact'
     }
+    // {
+    //   name: 'about',
+    //   route: '#about'
+    // },
+    // {
+    //   name: 'skills',
+    //   route: '#skills'
+    // },
+
+    // {
+    //   name: 'contact',
+    //   route: '#contact'
+    // }
   ]
   const { toggleColorMode } = useColorMode()
 
   return (
     <>
+      {navItems?.map((item, i) => (
+        <motion.li key={i} style={{ listStyleType: 'none' }} whileTap={{ scale: 0.95 }}>
+          <NavItem route={item.route} sectionName={item.name} />
+        </motion.li>
+      ))}
       <IconButton
         _hover={{ bgColor: 'none' }}
         aria-label=''
@@ -42,11 +47,6 @@ const Bar: React.FC = () => {
         variant='ghost'
         onClick={toggleColorMode}
       />
-      {navItems?.map((item, i) => (
-        <motion.li key={i} style={{ listStyleType: 'none' }} whileTap={{ scale: 0.95 }}>
-          <NavItem item={item.name} route={item.route} />
-        </motion.li>
-      ))}
     </>
   )
 }

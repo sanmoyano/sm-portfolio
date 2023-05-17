@@ -17,7 +17,7 @@ const Marquee: React.FC = () => {
 
   return (
     <AnimatePresence>
-      <ParallaxContainer speed={-8}>
+      <ParallaxContainer speed={-5}>
         <Stack
           alignItems='center'
           as={motion.div}

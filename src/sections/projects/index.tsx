@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
 
   return (
     <AnimatePresence>
-      <ParallaxContainer speed={10}>
+      <ParallaxContainer speed={-10}>
         <Box
           height='100vh'
           id='id'

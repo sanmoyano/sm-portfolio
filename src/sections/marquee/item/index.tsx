@@ -47,9 +47,6 @@ const LineItem: React.FC<LineItemProps> = ({ content, style, direction }) => {
         display: 'grid',
         placeContent: 'center',
         bgColor: 'blue',
-        // position: 'relative',
-        // width: { base: '100%' },
-        // maxW: { base: '100%' },
         overflow: 'hidden'
       }}
     >

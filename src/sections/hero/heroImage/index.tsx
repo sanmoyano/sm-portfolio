@@ -9,7 +9,7 @@ import IMG_VERDE from '../../../../public/logo_green.svg'
 
 const HeroImage: React.FC = () => {
   const [isImageLoading, setImageLoading] = useState(false)
-  const logo = useColorModeValue(IMG_ROJA, IMG_VERDE)
+  const logo: string = useColorModeValue(IMG_ROJA, IMG_VERDE)
 
   const imageLoaded = () => {
     setTimeout(() => setImageLoading(true), 600)

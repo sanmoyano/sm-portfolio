@@ -1,10 +1,13 @@
 import React from 'react'
 import { Stack } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
+import dynamic from 'next/dynamic'
 
 import ParallaxContainer from '@/components/parallax'
 
-import HeroImage from './heroImage'
+// import HeroImage from './heroImage'
+
+const DynamicHeroImage = dynamic(() => import('./heroImage'), { ssr: false })
 
 const Hero: React.FC = () => {
   return (
@@ -21,7 +24,7 @@ const Hero: React.FC = () => {
           width='100%'
         >
           <Stack justifyContent='center'>
-            <HeroImage />
+            <DynamicHeroImage />
           </Stack>
         </Stack>
       </AnimatePresence>

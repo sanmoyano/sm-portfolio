@@ -9,7 +9,7 @@ const DynamicHeroImage = dynamic(() => import('./heroImage'), { ssr: false })
 
 const Hero: React.FC = () => {
   return (
-    <ParallaxContainer>
+    <ParallaxContainer speed={5}>
       <AnimatePresence>
         <Stack
           alignItems='center'

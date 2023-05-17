@@ -15,11 +15,9 @@ const Marquee: React.FC = () => {
   const { textStyles } = useTheme()
   const captionSize = textStyles?.caption?.fontSize
 
-  console.log(typeof captionSize)
-
   return (
     <AnimatePresence>
-      <ParallaxContainer>
+      <ParallaxContainer speed={-8}>
         <Stack
           alignItems='center'
           as={motion.div}

@@ -14,13 +14,12 @@ interface TitleProps {
   titlingEnable?: boolean
 
 }
-
 const Title: React.FC<TitleProps> = ({ content, refItem, textStyle, vertical, float, titlingScale, titlingEnable }) => {
   const color = useColorModeValue('black', 'white')
 
   return (
     <Box
-      animate={float}
+      animation={float}
       as={motion.div}
       initial={{ opacity: 0 }}
       viewport={{ once: true }}

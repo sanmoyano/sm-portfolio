@@ -5,18 +5,18 @@ import { Link, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react
 import ContactIcons from '@/components/contactIcons'
 import { icons } from '@/data/incons'
 
+import { HeaderProps } from '../..'
 import Bar from '../bar'
 
 import Toggle from './toggle'
 
-interface MobileProps {
-  topPosition: number
-}
-
-const Mobile:React.FC<MobileProps> = ({ topPosition }) => {
+const Mobile:React.FC = () => {
   const [isOpen, setIsOpen] = useCycle(false, true)
-  const bgColor: string = useColorModeValue('white', 'black')
   const { colors } = useTheme()
+  const topPosition: HeaderProps = {
+    headerHeigth: 90
+  }
+  const bgColor: string = useColorModeValue('white', 'black')
   const colorText: string = useColorModeValue(`${colors.red}`, `${colors.green}`)
 
   const handlerMenu = () => {
@@ -50,7 +50,7 @@ const Mobile:React.FC<MobileProps> = ({ topPosition }) => {
             p={6}
             position='absolute'
             right='0px'
-            top={topPosition}
+            top={topPosition.headerHeigth}
             variants={variants}
             width='100%'
           >

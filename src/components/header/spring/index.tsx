@@ -2,11 +2,12 @@ import React from 'react'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { motion, useSpring, useScroll } from 'framer-motion'
 
-interface SpringScrollProps {
-  headerHeigth: number
-}
+import { HeaderProps } from '..'
 
-const SpringScroll: React.FC<SpringScrollProps> = ({ headerHeigth }) => {
+const SpringScroll: React.FC = () => {
+  const topPosition: HeaderProps = {
+    headerHeigth: 90
+  }
   const colorLine : string = useColorModeValue('black', 'white')
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
@@ -21,7 +22,7 @@ const SpringScroll: React.FC<SpringScrollProps> = ({ headerHeigth }) => {
       style={{ scaleX }}
       sx={{
         position: 'fixed',
-        top: headerHeigth,
+        top: topPosition.headerHeigth,
         left: 0,
         right: 0,
         height: '2px',

@@ -5,7 +5,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 // import { CacheProvider } from '@chakra-ui/next-js'
 
 import theme from '@/theme/theme'
-interface ProvidersProps {
+type ProvidersProps = {
   children : React.ReactNode
 }
 const Providers: React.FC<ProvidersProps> = ({ children }) => {

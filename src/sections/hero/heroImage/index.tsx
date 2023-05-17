@@ -26,6 +26,7 @@ const HeroImage: React.FC = () => {
         onLoad={imageLoaded}
       >
         <Image
+          priority
           alt='hero-section-sm'
           sizes='(max-width: 768px) 200px'
           src={logo}

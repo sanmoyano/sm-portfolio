@@ -11,8 +11,8 @@ const HeroImage: React.FC = () => {
   const [isImageLoading, setImageLoading] = useState(false)
   const logo: string = useColorModeValue(IMG_ROJA, IMG_VERDE)
 
-  const imageLoaded = () => {
-    setTimeout(() => setImageLoading(true), 600)
+  const handleLoadingComplete = () => {
+    setImageLoading(true)
   }
 
   return (
@@ -22,8 +22,7 @@ const HeroImage: React.FC = () => {
           opacity: isImageLoading ? 1 : 0
         }}
         initial={{ opacity: 0 }}
-        transition={{ opacity: { delay: 0.5, duration: 0.4 } }}
-        onLoad={imageLoaded}
+        transition={{ opacity: { delay: 1, duration: 2 } }}
       >
         <Image
           priority
@@ -31,6 +30,7 @@ const HeroImage: React.FC = () => {
           sizes='(max-width: 768px) 200px'
           src={logo}
           width={300}
+          onLoad={handleLoadingComplete}
         />
       </motion.div>
     </Container>

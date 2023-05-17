@@ -13,7 +13,9 @@ const Marquee: React.FC = () => {
   const DIMENSION_REF = useRef<HTMLDivElement>(null)
   const dimensions = useDimensions(DIMENSION_REF)
   const { textStyles } = useTheme()
-  const captionSize = textStyles.caption.fontSize
+  const captionSize = textStyles?.caption?.fontSize
+
+  console.log(typeof captionSize)
 
   return (
     <AnimatePresence>

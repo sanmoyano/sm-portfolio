@@ -5,8 +5,6 @@ import dynamic from 'next/dynamic'
 
 import ParallaxContainer from '@/components/parallax'
 
-// import HeroImage from './heroImage'
-
 const DynamicHeroImage = dynamic(() => import('./heroImage'), { ssr: false })
 
 const Hero: React.FC = () => {

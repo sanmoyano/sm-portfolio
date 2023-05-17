@@ -7,6 +7,8 @@ import useDimensions from '@/hooks/useDimensions'
 import ParallaxContainer from '@/components/parallax'
 import { calcFontSize } from '@/utils/calcFontSize'
 
+import MarqueeContainer from './container'
+
 const Marquee: React.FC = () => {
   const DIMENSION_REF = useRef<HTMLDivElement>(null)
   const dimensions = useDimensions(DIMENSION_REF)
@@ -68,6 +70,7 @@ const Marquee: React.FC = () => {
           <Stack display={{ base: 'block', lg: 'none' }} width='100%'>
             <Divider orientation='horizontal' variant='solid' />
           </Stack>
+          <MarqueeContainer height={dimensions.height} />
         </Stack>
       </ParallaxContainer>
     </AnimatePresence>

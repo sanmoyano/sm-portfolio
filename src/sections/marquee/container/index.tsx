@@ -14,7 +14,7 @@ const MarqueeContainer: React.FC<ContainerProps> = ({ height, width }) => {
   const textStyle: string = `0.5px ${color}`
 
   return (
-    <Stack bgColor='red' direction={{ base: 'column', lg: 'row' }} height={{ base: '100%', lg: height }} justifyContent='center' maxW='100%' width={{ base: width, lg: 'auto' }}>
+    <Stack direction={{ base: 'column', lg: 'row' }} height={{ base: '100%', lg: height }} justifyContent='center' maxW='100%' width={{ base: width, lg: 'auto' }}>
       <LineItem content='developer ' direction={1450} />
       <LineItem content='designer ' direction={-1450} style={textStyle} />
       <LineItem content='developer ' direction={1450} />

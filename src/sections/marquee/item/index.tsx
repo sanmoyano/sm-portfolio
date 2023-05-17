@@ -46,7 +46,6 @@ const LineItem: React.FC<LineItemProps> = ({ content, style, direction }) => {
       sx={{
         display: 'grid',
         placeContent: 'center',
-        bgColor: 'blue',
         overflow: 'hidden'
       }}
     >

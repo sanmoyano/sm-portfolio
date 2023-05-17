@@ -1,14 +1,15 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
-import { Box, Text, useMediaQuery, useTheme, useColorModeValue } from '@chakra-ui/react'
+import { Box, Stack, Text, useMediaQuery, useTheme, useColorModeValue } from '@chakra-ui/react'
 
 import { calcFontSize } from '@/utils/calcFontSize'
 
 type LineItemProps = {
   content: string,
   style?: string
+  direction: number
 }
-const LineItem: React.FC<LineItemProps> = ({ content, style }) => {
+const LineItem: React.FC<LineItemProps> = ({ content, style, direction }) => {
   const { textStyles } = useTheme()
   const isLargerThanMd = useMediaQuery('(min-width: 992px)')
   const color = useColorModeValue('brand.100', 'brand.200')
@@ -17,22 +18,22 @@ const LineItem: React.FC<LineItemProps> = ({ content, style }) => {
   // Animation settings
   const marqueeVariants: Variants = {
     horizontal: {
-      x: [null, 1450, 450],
+      x: [null, direction, 450],
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: 'reverse',
+          repeatType: 'loop',
           duration: 8,
           ease: 'linear'
         }
       }
     },
     vertical: {
-      y: [null, 1450, 450],
+      y: [null, direction, 450],
       transition: {
         y: {
           repeat: Infinity,
-          repeatType: 'reverse',
+          repeatType: 'loop',
           duration: 8,
           ease: 'linear'
         }
@@ -41,13 +42,14 @@ const LineItem: React.FC<LineItemProps> = ({ content, style }) => {
   }
 
   return (
-    <Box
+    <Stack
       sx={{
         display: 'grid',
         placeContent: 'center',
-        position: 'relative',
-        width: { base: '100%' },
-        maxW: { base: '100%' },
+        bgColor: 'blue',
+        // position: 'relative',
+        // width: { base: '100%' },
+        // maxW: { base: '100%' },
         overflow: 'hidden'
       }}
     >
@@ -56,7 +58,6 @@ const LineItem: React.FC<LineItemProps> = ({ content, style }) => {
         as={motion.div}
         sx={{ display: 'grid', placeContent: 'center', whiteSpace: 'nowrap' }}
         variants={marqueeVariants}
-        w='100%'
       >
         <Text
           color={style ? 'transparent' : color}
@@ -68,13 +69,14 @@ const LineItem: React.FC<LineItemProps> = ({ content, style }) => {
             WebkitTextStroke: style
           }}
           textAlign='center'
+          textOverflow='clip'
           textStyle='h1'
-          w='100%'
+          width='100%'
         >
-          {content.repeat(20)}
+          {content.repeat(10)}
         </Text>
       </Box>
-    </Box>
+    </Stack>
   )
 }
 

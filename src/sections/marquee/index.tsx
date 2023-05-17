@@ -39,7 +39,7 @@ const Marquee: React.FC = () => {
             height='100%'
             justifyContent='space-between'
             paddingRight={{ lg: 12 }}
-            width={{ base: '100%', lg: '70%' }}
+            width={{ base: '90vw', lg: '70%' }}
           >
             <Text
               fontWeight={700}
@@ -70,7 +70,7 @@ const Marquee: React.FC = () => {
           <Stack display={{ base: 'block', lg: 'none' }} width='100%'>
             <Divider orientation='horizontal' variant='solid' />
           </Stack>
-          <MarqueeContainer height={dimensions.height} />
+          <MarqueeContainer height={dimensions.height} width={dimensions.width} />
         </Stack>
       </ParallaxContainer>
     </AnimatePresence>

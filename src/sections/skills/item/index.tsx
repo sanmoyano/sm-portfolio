@@ -47,9 +47,11 @@ const ItemSkill: React.FC<SkillProps> = ({ ...props }) => {
           {skillType}
         </Text>
       </Stack>
-      {active && (
-        <DynamicTextCloud activeIndex={activeIndex} height={height} skills={skills} />
-      )}
+      <motion.div initial='hidden' variants={{ visible: { opacity: 1, transition: { duration: 3, delay: 2.5 } }, hidden: { opacity: 0 } }} viewport={{ once: true }} whileInView='visible'>
+        {active && (
+          <DynamicTextCloud activeIndex={activeIndex} height={height} skills={skills} />
+        )}
+      </motion.div>
     </AnimatePresence>
   )
 }

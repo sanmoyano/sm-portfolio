@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from 'react'
 import { NextPage } from 'next'
 import { Stack } from '@chakra-ui/react'
 
@@ -10,6 +11,10 @@ import Skills from '@/sections/skills'
 import Contact from '@/sections/contact'
 
 const Home : NextPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <main>

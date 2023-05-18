@@ -39,8 +39,10 @@ const Header : React.FC = () => {
       height={height.headerHeigth}
       initial={{ opacity: 0 }}
       justifyContent='space-between'
+      left={0}
       paddingInline={{ base: 3, md: 6, lg: 12 }}
       position='fixed'
+      top={0}
       viewport={{ once: true }}
       whileInView={{ opacity: 1, transition: { duration: 3 } }}
       width='100%'

@@ -1,0 +1,45 @@
+[
+  {
+    "type": "main",
+    "list": [
+      "ReactJs",
+      "JavaScript",
+      "Html",
+      "Css",
+      "Scss",
+      "Framer motion",
+      "Chakra UI",
+      "Material UI",
+      "Firebase",
+      "Cypress",
+      "Figma"
+    ]
+  },
+  {
+    "type": "upskilling",
+    "list": [
+      "TypeScript",
+      "React Native",
+      "NodeJs",
+      "Mongo DB",
+      "Express",
+      "NextJs",
+      "SQL",
+      "DBAAS",
+      "GraphQL",
+      "Apollo GraphQL"
+    ]
+  },
+  {
+    "type": "others",
+    "list": [
+      "Git",
+      "GitHub",
+      "Azure DevOps",
+      "ESLint",
+      "Style-components",
+      "Illustrator",
+      "Pothoshop"
+    ]
+  }
+]

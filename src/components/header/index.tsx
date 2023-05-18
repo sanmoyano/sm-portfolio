@@ -16,7 +16,7 @@ const Header : React.FC = () => {
   const height: HeaderProps = { headerHeigth: 90 }
 
   // Blur animation
-  const [isBlured, setIsBlured] = useState(false)
+  const [isBlured, setIsBlured] = useState<boolean>(false)
   const activeBackgroundBlur = () => {
     if (window.scrollY > height.headerHeigth) {
       setIsBlured(true)

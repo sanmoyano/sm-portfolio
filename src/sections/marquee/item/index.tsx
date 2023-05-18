@@ -9,6 +9,7 @@ type LineItemProps = {
   style?: string
   direction: number
 }
+
 const LineItem: React.FC<LineItemProps> = ({ content, style, direction }) => {
   const { textStyles } = useTheme()
   const isLargerThanMd = useMediaQuery('(min-width: 992px)')

@@ -11,7 +11,7 @@ import Bar from '../bar'
 import Toggle from './toggle'
 
 const Mobile:React.FC = () => {
-  const [isOpen, setIsOpen] = useCycle(false, true)
+  const [isOpen, setIsOpen] = useCycle<boolean>(false, true)
   const { colors } = useTheme()
   const topPosition: HeaderProps = {
     headerHeigth: 90

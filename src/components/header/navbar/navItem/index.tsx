@@ -5,15 +5,15 @@ import Link from 'next/link'
 
 import StarIcon from '@/components/starIcon'
 
-interface NavItemProps {
+type NavItemProps = {
   sectionName: string,
   route: string
 }
 
 const NavItem: React.FC<NavItemProps> = ({ route, sectionName }) => {
-  const [isHovered, setHovered] = useState(false)
+  const [isHovered, setHovered] = useState<boolean>(false)
   const { colors } = useTheme()
-  const fill = useColorModeValue(`${colors.black}`, `${colors.white}`)
+  const fill: string = useColorModeValue(`${colors.black}`, `${colors.white}`)
 
   return (
     <Link href={route} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>

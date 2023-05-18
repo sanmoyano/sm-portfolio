@@ -5,9 +5,8 @@ import { AnimatePresence, motion, Variants } from 'framer-motion'
 interface AnimationProps {
   children:React.ReactNode
   animationVariants: Variants
-  justifyContent:string
+  justifyContent?:string
   height:number
-  // ref:HTMLDivElement
 }
 
 const AnimationContainer: React.FC<AnimationProps> = ({ ...props }) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
-interface IconProps {
+type IconProps = {
   fill: string,
   isRotate: boolean
 }

@@ -23,16 +23,6 @@ const Skills = () => {
   const float = useFloatAnimation()
   const color = useColorBrand()
 
-  const handlerKeyPress = (e: KeyboardEvent) => {
-    if (e.code === 'ArrowUp') {
-      e.preventDefault()
-      setActiveSkill((prevSkill) => prevSkill === 0 ? SKILLS.length - 1 : prevSkill - 1)
-    } else if (e.code === 'ArrowDown') {
-      e.preventDefault()
-      setActiveSkill((prevSkill) => prevSkill === SKILLS.length - 1 ? 0 : prevSkill + 1)
-    }
-  }
-
   // Animation settings
   const containerAnimationVariants = {
     hidden: { opacity: 0 },
@@ -50,6 +40,16 @@ const Skills = () => {
   const itemAnimationVariants = {
     hidden: { x: '-200%' },
     visible: { x: '0%' }
+  }
+
+  const handlerKeyPress = (e: KeyboardEvent) => {
+    if (e.code === 'ArrowUp') {
+      e.preventDefault()
+      setActiveSkill((prevSkill) => prevSkill === 0 ? SKILLS.length - 1 : prevSkill - 1)
+    } else if (e.code === 'ArrowDown') {
+      e.preventDefault()
+      setActiveSkill((prevSkill) => prevSkill === SKILLS.length - 1 ? 0 : prevSkill + 1)
+    }
   }
 
   useEffect(() => {

@@ -16,9 +16,9 @@ import ItemSkill from './item'
 
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(0)
-  const HEIGHT_TEXT_REF = useRef(null)
+  const HEIGHT_TEXT_REF = useRef<HTMLParagraphElement>(null)
   const { height } = useDimensions(HEIGHT_TEXT_REF)
-  const ITEM_REF = useRef(null)
+  const ITEM_REF = useRef<HTMLDivElement>(null)
   const isInView = useInView(ITEM_REF)
   const float = useFloatAnimation()
   const color = useColorBrand()

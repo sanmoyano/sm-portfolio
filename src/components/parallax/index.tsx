@@ -5,7 +5,7 @@ interface ParallaxProps {
   children:React.ReactElement
   speed: number
 }
-const ParallaxContainer: React.FC<ParallaxProps> = ({ children, speed }) => {
+const ParallaxContainer = ({ children, speed }: ParallaxProps) => {
   return (
     <Parallax speed={speed}>{children}</Parallax>
   )

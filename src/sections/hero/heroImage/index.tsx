@@ -7,9 +7,9 @@ import Image from 'next/image'
 import IMG_ROJA from '../../../../public/logo_red.svg'
 import IMG_VERDE from '../../../../public/logo_green.svg'
 
-const HeroImage: React.FC = () => {
+const HeroImage = () => {
   const [isImageLoading, setImageLoading] = useState(false)
-  const logo: string = useColorModeValue(IMG_ROJA, IMG_VERDE)
+  const logo:'IMG_ROJA' | 'IMG_VERDE' = useColorModeValue(IMG_ROJA, IMG_VERDE)
 
   const handleLoadingComplete = () => {
     setImageLoading(true)

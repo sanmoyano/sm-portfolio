@@ -8,7 +8,7 @@ interface TextCloudProps {
   height: number,
   skills:string[]
 }
-const TextCloud: React.FC<TextCloudProps> = ({ activeIndex, height, skills }) => {
+const TextCloud = ({ activeIndex, height, skills }: TextCloudProps) => {
   const isVisible = activeIndex >= 0 && activeIndex <= 2
 
   return (

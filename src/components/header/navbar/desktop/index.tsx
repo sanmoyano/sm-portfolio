@@ -3,7 +3,7 @@ import { Stack } from '@chakra-ui/react'
 
 import Bar from '../bar'
 
-const Desktop: React.FC = () => {
+const Desktop = () => {
   return (
     <Stack alignItems='center' direction='row' display={{ base: 'none', lg: 'flex' }} gap={10}>
       <Bar />

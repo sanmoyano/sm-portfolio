@@ -8,7 +8,7 @@ import ParallaxContainer from '@/components/parallax'
 import Title from '@/components/titles'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const animation = useFloatAnimation()
 
   return (

@@ -6,10 +6,13 @@ import { Stack, Link } from '@chakra-ui/react'
 import Tilting from '../tilting'
 
 interface IconProps {
-  icons: {icon: IconDefinition; url:string}[]
+  icons: {
+    icon: IconDefinition
+    url:string
+  }[]
 }
 
-const ContactIcons: React.FC<IconProps> = ({ icons }) => {
+const ContactIcons = ({ icons }: IconProps) => {
   return (
     <Stack alignItems='center' direction='row' justifyContent='space-between' width='200px'>
       {icons?.map((icon, i) => (

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 import NavItem from '../navItem'
 
-const Bar: React.FC = () => {
+const Bar = () => {
   const navItems = [
     {
       name: 'home',

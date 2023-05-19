@@ -14,7 +14,7 @@ interface TitleProps {
   titlingEnable?: boolean
 
 }
-const Title: React.FC<TitleProps> = ({ content, refItem, textStyle, vertical, float, titlingScale, titlingEnable }) => {
+const Title = ({ content, refItem, textStyle, vertical, float, titlingScale, titlingEnable }: TitleProps) => {
   const color = useColorModeValue('black', 'white')
 
   return (

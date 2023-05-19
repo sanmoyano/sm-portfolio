@@ -4,7 +4,7 @@ import { Link, Stack, Text, Grid, useColorModeValue, useTheme } from '@chakra-ui
 
 import Logo from '../logo'
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const heart = useColorModeValue('🖤', '🤍')
   const { textStyles } = useTheme()
   const footerSize = textStyles?.footer?.fontSize

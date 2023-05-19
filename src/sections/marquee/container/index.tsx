@@ -10,9 +10,9 @@ type ContainerProps = {
   width:number
 }
 
-const MarqueeContainer: React.FC<ContainerProps> = ({ height, width }) => {
+const MarqueeContainer = ({ height, width }: ContainerProps) => {
   const color = useColorBrand()
-  const textStyle: string = `1px ${color}`
+  const textStyle = `1px ${color}`
 
   return (
     <Stack direction={{ base: 'column', lg: 'row' }} height={{ base: '100%', lg: height }} justifyContent='center' maxW='100%' width={{ base: width, lg: 'auto' }}>

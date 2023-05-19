@@ -1,13 +1,13 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt'
 
-interface TiltinProps {
+interface TiltingProps {
   enable? : boolean,
   scale? : number
-  children?: React.ReactNode
+  children?: React.ReactElement
 }
 
-const Tilting: React.FC<TiltinProps> = ({ enable, scale, children }) => {
+const Tilting = ({ enable, scale, children }: TiltingProps) => {
   return (
     <Tilt scale={scale} tiltEnable={enable} transitionSpeed={2500}>
       {children}

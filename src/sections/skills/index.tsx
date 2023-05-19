@@ -14,11 +14,11 @@ import useColorBrand from '@/hooks/useColorBrand'
 
 import ItemSkill from './item'
 
-const Skills: React.FC = () => {
-  const [activeSkill, setActiveSkill] = useState<number>(0)
+const Skills = () => {
+  const [activeSkill, setActiveSkill] = useState(0)
   const HEIGHT_TEXT_REF = useRef<HTMLDivElement>(null)
   const { height } = useDimensions(HEIGHT_TEXT_REF)
-  const ITEM_REF = useRef<null>(null)
+  const ITEM_REF = useRef(null)
   const isInView = useInView(ITEM_REF)
   const float = useFloatAnimation()
   const color = useColorBrand()

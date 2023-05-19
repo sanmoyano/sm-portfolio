@@ -7,7 +7,7 @@ type IconProps = {
   isRotate: boolean
 }
 
-const StarIcon: React.FC<IconProps> = ({ fill, isRotate }) => {
+const StarIcon = ({ fill, isRotate }: IconProps) => {
   const variants = {
     hover: {
       rotate: 360

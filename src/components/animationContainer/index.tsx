@@ -9,7 +9,7 @@ interface AnimationProps {
   height:number
 }
 
-const AnimationContainer: React.FC<AnimationProps> = ({ ...props }) => {
+const AnimationContainer = ({ ...props }: AnimationProps) => {
   const { children, animationVariants, justifyContent, height } = props
 
   return (

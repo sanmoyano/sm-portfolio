@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import Title from '../titles'
 
-const Logo: React.FC = () => {
+const Logo = () => {
   return (
     <Link href='/'>
       <Title content='#SM' textStyle='logo' titlingScale={1.1} />

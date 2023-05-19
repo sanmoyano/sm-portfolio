@@ -10,14 +10,12 @@ import useDimensions from '@/hooks/useDimensions'
 import AnimationContainer from '@/components/animationContainer'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
 
-type TextAlign = 'left' | 'center' | 'right' | 'justify';
-
 interface TextContentProp {
-  content: string;
-  aling?: TextAlign;
+  content: string
+  aling?: 'left' | 'center' | 'right' | 'justify';
 }
 
-const About: React.FC = () => {
+const About = () => {
   const HEIGHT_TEXT_REF = useRef<HTMLDivElement>(null)
   const dimension = useDimensions(HEIGHT_TEXT_REF)
   const colorText = useColorModeValue('brand.100', 'brand.200')
@@ -34,7 +32,7 @@ const About: React.FC = () => {
     }
   }
 
-  const GridItemText: React.FC<TextContentProp> = ({ content }) => {
+  const GridItemText = ({ content }: TextContentProp) => {
     return (
       <GridItem
         animate={{ opacity: 1, transition: { duration: 3, delay: 0.2 } }}
@@ -52,7 +50,7 @@ const About: React.FC = () => {
     )
   }
 
-  const TextQuote: React.FC<TextContentProp> = ({ content, aling }) => {
+  const TextQuote = ({ content, aling }: TextContentProp) => {
     return (
       <Text
         as={motion.p}

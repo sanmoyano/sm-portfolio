@@ -9,11 +9,17 @@ import { calcFontSize } from '@/utils/calcFontSize'
 
 import MarqueeContainer from './container'
 
-const Marquee: React.FC = () => {
+export interface FontSizes {
+  base:string
+  md:string
+  lg:string
+}
+
+const Marquee = () => {
   const DIMENSION_REF = useRef<HTMLDivElement>(null)
   const dimensions = useDimensions(DIMENSION_REF)
   const { textStyles } = useTheme()
-  const captionSize = textStyles?.caption?.fontSize
+  const captionSize: FontSizes = textStyles?.caption?.fontSize
 
   return (
     <AnimatePresence>

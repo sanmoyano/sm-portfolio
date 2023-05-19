@@ -9,7 +9,7 @@ import ContactIcons from '@/components/contactIcons'
 import Tilting from '@/components/tilting'
 import useColorBrand from '@/hooks/useColorBrand'
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const colorText = useColorBrand()
 
   return (

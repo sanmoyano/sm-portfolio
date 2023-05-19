@@ -12,7 +12,7 @@ export interface HeaderProps {
     headerHeigth: number;
   }
 
-const Header : React.FC = () => {
+const Header = () => {
   const height: HeaderProps = { headerHeigth: 90 }
 
   // Blur animation

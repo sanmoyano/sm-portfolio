@@ -11,11 +11,11 @@ interface PathProps {
   closedPath:string,
 }
 
-const Toggle: React.FC<ToggleProps> = ({ toggle }) => {
+const Toggle = ({ toggle }: ToggleProps) => {
   const { colors } = useTheme()
-  const fill: string = useColorModeValue(`${colors.black}`, `${colors.white}`)
+  const fill = useColorModeValue(`${colors.black}`, `${colors.white}`)
 
-  const Path: React.FC <PathProps> = ({ openPath, closedPath }) => {
+  const Path = ({ openPath, closedPath }: PathProps) => {
     return (
       <motion.path
         fill='transparent'

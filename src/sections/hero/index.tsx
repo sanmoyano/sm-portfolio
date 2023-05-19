@@ -7,7 +7,7 @@ import ParallaxContainer from '@/components/parallax'
 
 const DynamicHeroImage = dynamic(() => import('./heroImage'), { ssr: false })
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <ParallaxContainer speed={5}>
       <AnimatePresence>

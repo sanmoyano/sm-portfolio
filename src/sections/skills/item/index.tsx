@@ -16,9 +16,9 @@ interface SkillProps {
   skills:string[]
 }
 
-const ItemSkill: React.FC<SkillProps> = ({ ...props }) => {
+const ItemSkill = ({ ...props }: SkillProps) => {
   const { activeIndex, animationVariant, height, index, skillType, skills } = props
-  const active: boolean = activeIndex === index
+  const active = activeIndex === index
   const color = useColorBrand()
 
   return (

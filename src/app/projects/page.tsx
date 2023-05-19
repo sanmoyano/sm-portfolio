@@ -3,8 +3,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import { NextPage } from 'next'
 import { Text, Stack } from '@chakra-ui/react'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
-import { useInView } from 'framer-motion'
+import { useInView, AnimatePresence } from 'framer-motion'
 
+import AnimationContainer from '@/components/animationContainer'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
 import useColorBrand from '@/hooks/useColorBrand'
 import ProjectItem from '@/components/projectItem'
@@ -25,6 +26,24 @@ const Projects : NextPage = () => {
   const color = useColorBrand()
   const projects: ProjectsData[] = PROJECTS as ProjectsData[]
 
+  const containerAnimationVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delayChildren: 1,
+        staggerChildren: 0.5,
+        staggerDirection: 1
+      }
+    }
+  }
+
+  const itemAnimationVariants = {
+    hidden: { x: '-200%' },
+    visible: { x: '0%' }
+  }
+
   const handlerKeyPress = (e: KeyboardEvent) => {
     if (e.code === 'ArrowUp') {
       e.preventDefault()
@@ -44,21 +63,25 @@ const Projects : NextPage = () => {
   }, [isInView])
 
   return (
-    <Stack height='100%' justifyContent='center' paddingInline={{ base: 6, lg: 12 }} paddingTop={90} spacing={10}>
-      <Text
-        animation={float}
-        bottom={0}
-        color={color}
-        textStyle='quotes'
-      >
-        use the <ArrowUpIcon /> <ArrowDownIcon /> arrow keys to change project
-      </Text>
-      <Stack ref={ITEM_REF} bgColor='blue'>
-        {projects?.map((project, index) => (
-          <ProjectItem key={project.page} activeIndex={activeIndex} index={index} name={project.name} page={project.page} repo={project.repo} />
-        ))}
+    <AnimatePresence>
+      <Stack height='100%' justifyContent='center' paddingInline={{ base: 6, lg: 12 }} paddingTop={100} spacing={10}>
+        <Text
+          animation={float}
+          bottom={0}
+          color={color}
+          textStyle='quotes'
+        >
+          use the <ArrowUpIcon /> <ArrowDownIcon /> arrow keys to change project
+        </Text>
+        <Stack ref={ITEM_REF} overflow='hidden' width='100%'>
+          <AnimationContainer animationVariants={containerAnimationVariants}>
+            {projects?.map((project, index) => (
+              <ProjectItem key={project.page} activeIndex={activeIndex} animationVariant={itemAnimationVariants} index={index} name={project.name} page={project.page} repo={project.repo} />
+            ))}
+          </AnimationContainer>
+        </Stack>
       </Stack>
-    </Stack>
+    </AnimatePresence>
   )
 }
 

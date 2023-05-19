@@ -16,7 +16,7 @@ export interface FontSizes {
 }
 
 const Marquee = () => {
-  const DIMENSION_REF = useRef<HTMLDivElement>(null)
+  const DIMENSION_REF = useRef(null)
   const dimensions = useDimensions(DIMENSION_REF)
   const { textStyles } = useTheme()
   const captionSize: FontSizes = textStyles?.caption?.fontSize

@@ -16,7 +16,7 @@ import ItemSkill from './item'
 
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(0)
-  const HEIGHT_TEXT_REF = useRef<HTMLDivElement>(null)
+  const HEIGHT_TEXT_REF = useRef(null)
   const { height } = useDimensions(HEIGHT_TEXT_REF)
   const ITEM_REF = useRef(null)
   const isInView = useInView(ITEM_REF)

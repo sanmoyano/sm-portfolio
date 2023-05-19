@@ -16,7 +16,7 @@ interface TextContentProp {
 }
 
 const About = () => {
-  const HEIGHT_TEXT_REF = useRef<HTMLDivElement>(null)
+  const HEIGHT_TEXT_REF = useRef(null)
   const dimension = useDimensions(HEIGHT_TEXT_REF)
   const colorText = useColorModeValue('brand.100', 'brand.200')
   const animation = useFloatAnimation()

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { Stack, Text } from '@chakra-ui/react'
 import { AnimatePresence, useInView } from 'framer-motion'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 
@@ -10,6 +10,7 @@ import AnimationContainer from '@/components/animationContainer'
 import { verticalText } from '@/theme/styles/verticalText'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
 import SKILLS from '@/data/skills.json'
+import useColorBrand from '@/hooks/useColorBrand'
 
 import ItemSkill from './item'
 
@@ -20,7 +21,7 @@ const Skills: React.FC = () => {
   const ITEM_REF = useRef<null>(null)
   const isInView = useInView(ITEM_REF)
   const float = useFloatAnimation()
-  const color = useColorModeValue('brand.100', 'brand.200')
+  const color = useColorBrand()
 
   const handlerKeyPress = (e: KeyboardEvent) => {
     if (e.code === 'ArrowUp') {
@@ -60,7 +61,7 @@ const Skills: React.FC = () => {
   }, [isInView])
 
   return (
-    <ParallaxContainer speed={10}>
+    <ParallaxContainer speed={15}>
       <AnimatePresence>
         <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', md: 'row' }} height='100vh' overflow='hidden'>
           <Title content='skills' refItem={HEIGHT_TEXT_REF} textStyle='h1' titlingScale={1.2} vertical={verticalText} />

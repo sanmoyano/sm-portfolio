@@ -53,9 +53,9 @@ const Marquee: React.FC = () => {
             <Text
               fontFamily='Roboto'
               fontSize={{
-                base: calcFontSize(captionSize.base),
-                md: calcFontSize(captionSize.md),
-                lg: calcFontSize(captionSize.lg)
+                base: calcFontSize(captionSize?.base),
+                md: calcFontSize(captionSize?.md),
+                lg: calcFontSize(captionSize?.lg)
               }}
               lineHeight={1}
               textAlign='justify'

@@ -1,8 +1,9 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
-import { Box, Stack, Text, useMediaQuery, useTheme, useColorModeValue } from '@chakra-ui/react'
+import { Box, Stack, Text, useMediaQuery, useTheme } from '@chakra-ui/react'
 
 import { calcFontSize } from '@/utils/calcFontSize'
+import useColorBrand from '@/hooks/useColorBrand'
 
 type LineItemProps = {
   content: string,
@@ -13,7 +14,7 @@ type LineItemProps = {
 const LineItem: React.FC<LineItemProps> = ({ content, style, direction }) => {
   const { textStyles } = useTheme()
   const isLargerThanMd = useMediaQuery('(min-width: 992px)')
-  const color = useColorModeValue('brand.100', 'brand.200')
+  const color = useColorBrand()
   const h1Size = textStyles.h1.fontSize.md
 
   // Animation settings

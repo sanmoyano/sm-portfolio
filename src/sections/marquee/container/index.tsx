@@ -1,5 +1,7 @@
 import React from 'react'
-import { Stack, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
+
+import useColorBrand from '@/hooks/useColorBrand'
 
 import LineItem from '../item'
 
@@ -9,9 +11,8 @@ type ContainerProps = {
 }
 
 const MarqueeContainer: React.FC<ContainerProps> = ({ height, width }) => {
-  const { colors } = useTheme()
-  const color = useColorModeValue(colors.brand[100], colors.brand[200])
-  const textStyle: string = `0.5px ${color}`
+  const color = useColorBrand()
+  const textStyle: string = `1px ${color}`
 
   return (
     <Stack direction={{ base: 'column', lg: 'row' }} height={{ base: '100%', lg: height }} justifyContent='center' maxW='100%' width={{ base: width, lg: 'auto' }}>

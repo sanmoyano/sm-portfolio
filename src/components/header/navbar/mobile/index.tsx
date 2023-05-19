@@ -1,9 +1,10 @@
 import React from 'react'
 import { motion, AnimatePresence, useCycle } from 'framer-motion'
-import { Link, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 
 import ContactIcons from '@/components/contactIcons'
 import { icons } from '@/data/incons'
+import useColorBrand from '@/hooks/useColorBrand'
 
 import { HeaderProps } from '../..'
 import Bar from '../bar'
@@ -12,12 +13,11 @@ import Toggle from './toggle'
 
 const Mobile:React.FC = () => {
   const [isOpen, setIsOpen] = useCycle<boolean>(false, true)
-  const { colors } = useTheme()
   const topPosition: HeaderProps = {
     headerHeigth: 90
   }
   const bgColor: string = useColorModeValue('white', 'black')
-  const colorText: string = useColorModeValue(`${colors.red}`, `${colors.green}`)
+  const colorText = useColorBrand()
 
   const handlerMenu = () => {
     setIsOpen()

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Variants, AnimatePresence, motion } from 'framer-motion'
-import { Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Stack, Text } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+
+import useColorBrand from '@/hooks/useColorBrand'
 
 const DynamicTextCloud = dynamic(() => import('../../../components/textCloud'))
 
@@ -17,8 +19,7 @@ interface SkillProps {
 const ItemSkill: React.FC<SkillProps> = ({ ...props }) => {
   const { activeIndex, animationVariant, height, index, skillType, skills } = props
   const active: boolean = activeIndex === index
-  const { colors } = useTheme()
-  const color: string = useColorModeValue(colors.brand[100], colors.brand[200])
+  const color = useColorBrand()
 
   return (
     <AnimatePresence>

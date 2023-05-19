@@ -19,7 +19,7 @@ const ProjectItem = ({ name, page, repo, index, activeIndex }: ItemProps) => {
     <Stack alignItems='center' bgColor={active ? 'yellow' : 'violet'} direction='row' justifyContent='space-between' width='100%'>
       <Text fontFamily='apotek-extrawide' fontSize='9rem' lineHeight={0.7} textTransform='uppercase'>{name}</Text>
       <Stack bgColor='blue' direction='row' justifyContent='space-around' opacity={active ? 1 : 0}>
-        {/* <Text color={color} textStyle='quotes'>press enter to go to the project</Text> */}
+        <Text color={color} textStyle='quotes'>press enter to go to the project</Text>
         <Link href={page}>page</Link>
         <Link href={repo}>repo</Link>
       </Stack>

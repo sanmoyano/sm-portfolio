@@ -21,9 +21,9 @@ const Projects : NextPage = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const ITEM_REF = useRef<HTMLDivElement>(null)
   const isInView = useInView(ITEM_REF)
-  const projects: ProjectsData[] = PROJECTS as ProjectsData[]
   const float = useFloatAnimation()
   const color = useColorBrand()
+  const projects: ProjectsData[] = PROJECTS as ProjectsData[]
 
   const handlerKeyPress = (e: KeyboardEvent) => {
     if (e.code === 'ArrowUp') {

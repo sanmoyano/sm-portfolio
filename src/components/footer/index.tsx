@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   const heart = useColorModeValue('🖤', '🤍')
   const { textStyles } = useTheme()
   const footerSize = textStyles?.footer?.fontSize
-  const underlineColor = useColorModeValue('black', 'white')
+  // const underlineColor = useColorModeValue('black', 'white')
   const getYear = new Date().getFullYear()
   // const anchorStyle: SystemStyleObject = {
   //   _after: {

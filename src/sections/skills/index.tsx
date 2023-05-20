@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { Stack, Text } from '@chakra-ui/react'
-import { AnimatePresence, useInView } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 
 import ParallaxContainer from '@/components/parallax'
@@ -11,6 +11,7 @@ import { verticalText } from '@/theme/styles/verticalText'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
 import SKILLS from '@/data/skills.json'
 import useColorBrand from '@/hooks/useColorBrand'
+import useArrowKeys from '@/hooks/useArrowKeys'
 
 import ItemSkill from './item'
 
@@ -19,9 +20,15 @@ const Skills = () => {
   const HEIGHT_TEXT_REF = useRef<HTMLParagraphElement>(null)
   const { height } = useDimensions(HEIGHT_TEXT_REF)
   const ITEM_REF = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ITEM_REF)
   const float = useFloatAnimation()
   const color = useColorBrand()
+
+  const [activeIndex] = useArrowKeys({
+    arr: SKILLS,
+    activeIndex: activeSkill,
+    ref: ITEM_REF,
+    setActiveIndex: setActiveSkill
+  })
 
   // Animation settings
   const containerAnimationVariants = {
@@ -42,24 +49,6 @@ const Skills = () => {
     visible: { x: '0%' }
   }
 
-  const handlerKeyPress = (e: KeyboardEvent) => {
-    if (e.code === 'ArrowUp') {
-      e.preventDefault()
-      setActiveSkill((prevSkill) => prevSkill === 0 ? SKILLS.length - 1 : prevSkill - 1)
-    } else if (e.code === 'ArrowDown') {
-      e.preventDefault()
-      setActiveSkill((prevSkill) => prevSkill === SKILLS.length - 1 ? 0 : prevSkill + 1)
-    }
-  }
-
-  useEffect(() => {
-    isInView && document.addEventListener('keydown', handlerKeyPress)
-
-    return () => {
-      isInView && document.removeEventListener('keydown', handlerKeyPress)
-    }
-  }, [isInView])
-
   return (
     <ParallaxContainer speed={15}>
       <AnimatePresence>
@@ -67,7 +56,7 @@ const Skills = () => {
           <Title content='skills' refItem={HEIGHT_TEXT_REF} textStyle='h1' titlingScale={1.2} vertical={verticalText} />
           <AnimationContainer animationVariants={containerAnimationVariants} height={height}>
             {SKILLS?.map((skill, index) => (
-              <ItemSkill key={skill.type} activeIndex={activeSkill} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
+              <ItemSkill key={skill.type} activeIndex={activeIndex} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
             ))}
             <Text
               animation={float}

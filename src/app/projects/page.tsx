@@ -1,9 +1,9 @@
 'use client'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { NextPage } from 'next'
 import { Text, Stack } from '@chakra-ui/react'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
-import { useInView, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 import AnimationContainer from '@/components/animationContainer'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
@@ -22,7 +22,6 @@ export interface ProjectsData {
 const Projects : NextPage = () => {
   const [activeIndexProject, setActiveIndexProject] = useState(0)
   const ITEM_REF = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ITEM_REF)
   const float = useFloatAnimation()
   const color = useColorBrand()
   const projects: ProjectsData[] = PROJECTS as ProjectsData[]
@@ -45,25 +44,12 @@ const Projects : NextPage = () => {
     visible: { x: '0%' }
   }
 
-  const handlerKeyPress = (e: KeyboardEvent) => {
-    if (e.code === 'ArrowUp') {
-      e.preventDefault()
-      setActiveIndexProject((prevIndex) => prevIndex === 0 ? projects.length - 1 : prevIndex - 1)
-    } else if (e.code === 'ArrowDown') {
-      e.preventDefault()
-      setActiveIndexProject((prevIndex) => prevIndex === projects.length - 1 ? 0 : prevIndex + 1)
-    }
-  }
-
-  useEffect(() => {
-    isInView && document.addEventListener('keydown', handlerKeyPress)
-
-    return () => {
-      isInView && document.removeEventListener('keydown', handlerKeyPress)
-    }
-  }, [isInView])
-
-  // const [activeIndex] = useArrowKeys({ projects, ITEM_REF, activeIndexProject, setActiveIndexProject })
+  const [activeIndex] = useArrowKeys({
+    arr: projects,
+    ref: ITEM_REF,
+    activeIndex: activeIndexProject,
+    setActiveIndex: setActiveIndexProject
+  })
 
   return (
     <AnimatePresence>
@@ -79,7 +65,7 @@ const Projects : NextPage = () => {
         <Stack ref={ITEM_REF} overflow='hidden' width='100%'>
           <AnimationContainer animationVariants={containerAnimationVariants}>
             {projects?.map((project, index) => (
-              <ProjectItem key={project.page} activeIndex={activeIndexProject} animationVariant={itemAnimationVariants} index={index} name={project.name} page={project.page} repo={project.repo} />
+              <ProjectItem key={project.page} activeIndex={activeIndex} animationVariant={itemAnimationVariants} index={index} name={project.name} page={project.page} repo={project.repo} />
             ))}
           </AnimationContainer>
         </Stack>

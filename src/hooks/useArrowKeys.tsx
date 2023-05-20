@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useInView } from 'framer-motion'
 
 interface Props {
-  arr:[]
+  arr: any[]
   ref:React.RefObject<HTMLDivElement>
   activeIndex:number
   setActiveIndex:React.Dispatch<React.SetStateAction<number>>

@@ -1,35 +1,35 @@
-// import React, { useEffect } from 'react'
-// import { useInView } from 'framer-motion'
+import React, { useEffect } from 'react'
+import { useInView } from 'framer-motion'
 
-// interface Props {
-//   setActiveIndex: React.Dispatch<React.SetStateAction<number>>
-//   activeIndex: number
-//   array: []
-//   ref:React.RefObject<HTMLDivElement>
-// }
+interface Props {
+  arr:[]
+  ref:React.RefObject<HTMLDivElement>
+  activeIndex:number
+  setActiveIndex:React.Dispatch<React.SetStateAction<number>>
+}
 
-// const useArrowKeys = ({ array, activeIndex, setActiveIndex, ref }: Props) => {
-//   const [isInView, targetRef] = useInView(ref)
+const useArrowKeys = ({ arr, ref, activeIndex, setActiveIndex }: Props) => {
+  const isInView = useInView(ref)
 
-//   const handlerKeyPress = (e: KeyboardEvent) => {
-//     if (e.code === 'ArrowUp') {
-//       e.preventDefault()
-//       setActiveIndex((prevIndex) => prevIndex === 0 ? array.length - 1 : prevIndex - 1)
-//     } else if (e.code === 'ArrowDown') {
-//       e.preventDefault()
-//       setActiveIndex((prevIndex) => prevIndex === array.length - 1 ? 0 : prevIndex + 1)
-//     }
-//   }
+  const handlerKeyPress = (e: KeyboardEvent) => {
+    if (e.code === 'ArrowUp') {
+      e.preventDefault()
+      setActiveIndex((prevIndex) => prevIndex === 0 ? arr.length - 1 : prevIndex - 1)
+    } else if (e.code === 'ArrowDown') {
+      e.preventDefault()
+      setActiveIndex((prevIndex) => prevIndex === arr.length ? 0 : prevIndex + 1)
+    }
+  }
 
-//   useEffect(() => {
-//     isInView && document.addEventListener('keydown', handlerKeyPress)
+  useEffect(() => {
+    isInView && document.addEventListener('keydown', handlerKeyPress)
 
-//     return () => {
-//       isInView && document.removeEventListener('keydown', handlerKeyPress)
-//     }
-//   }, [isInView, setActiveIndex])
+    return () => {
+      isInView && document.removeEventListener('keydown', handlerKeyPress)
+    }
+  })
 
-//   return [isInView, targetRef]
-// }
+  return [activeIndex]
+}
 
-// export default useArrowKeys
+export default useArrowKeys

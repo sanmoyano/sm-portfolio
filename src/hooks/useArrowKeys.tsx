@@ -17,7 +17,7 @@ const useArrowKeys = ({ arr, ref, activeIndex, setActiveIndex }: Props) => {
       setActiveIndex((prevIndex) => prevIndex === 0 ? arr.length - 1 : prevIndex - 1)
     } else if (e.code === 'ArrowDown') {
       e.preventDefault()
-      setActiveIndex((prevIndex) => prevIndex === arr.length ? 0 : prevIndex + 1)
+      setActiveIndex((prevIndex) => prevIndex === arr.length - 1 ? 0 : prevIndex + 1)
     }
   }
 

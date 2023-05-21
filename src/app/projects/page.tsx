@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react'
 import { NextPage } from 'next'
 import { Text, Stack } from '@chakra-ui/react'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import AnimationContainer from '@/components/animationContainer'
 import useFloatAnimation from '@/hooks/useFloatAnimation'
@@ -24,7 +24,8 @@ const Projects : NextPage = () => {
   const ITEM_REF = useRef<HTMLDivElement>(null)
   const float = useFloatAnimation()
   const color = useColorBrand()
-  const projects: ProjectsData[] = PROJECTS as ProjectsData[]
+  const projects: ProjectsData[] = PROJECTS
+  const calcDelayAnimation = projects.length * 0.65
 
   const containerAnimationVariants = {
     hidden: { opacity: 0 },
@@ -53,19 +54,35 @@ const Projects : NextPage = () => {
 
   return (
     <AnimatePresence>
-      <Stack height='100%' justifyContent='center' paddingInline={{ base: 6, lg: 12 }} paddingTop={100} spacing={10}>
+      <Stack height='100%' justifyContent='center' paddingTop={100} spacing={10}>
         <Text
+          animate='visible'
           animation={float}
+          as={motion.div}
           bottom={0}
           color={color}
+          initial='hidden'
+          paddingLeft={{ base: 6, md: 12 }}
           textStyle='quotes'
+          variants={{
+            visible: { opacity: 1, transition: { duration: 1, delay: calcDelayAnimation } },
+            hidden: { opacity: 0 }
+          }}
         >
           use the <ArrowUpIcon /> <ArrowDownIcon /> arrow keys to change project
         </Text>
         <Stack ref={ITEM_REF} overflow='hidden' width='100%'>
           <AnimationContainer animationVariants={containerAnimationVariants}>
             {projects?.map((project, index) => (
-              <ProjectItem key={project.page} activeIndex={activeIndex} animationVariant={itemAnimationVariants} index={index} name={project.name} page={project.page} repo={project.repo} />
+              <ProjectItem
+                key={project.page}
+                activeIndex={activeIndex}
+                animationVariant={itemAnimationVariants}
+                index={index}
+                name={project.name}
+                page={project.page}
+                repo={project.repo}
+              />
             ))}
           </AnimationContainer>
         </Stack>

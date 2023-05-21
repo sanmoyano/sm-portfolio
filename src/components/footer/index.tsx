@@ -1,37 +1,16 @@
 'use client'
 import React from 'react'
-import { Link, Stack, Text, Grid, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Stack, Text, Grid, useColorModeValue, useTheme } from '@chakra-ui/react'
 
+import AnchorContainer from '../anchorContainer'
 import Logo from '../logo'
 
 const Footer = () => {
   const heart = useColorModeValue('🖤', '🤍')
   const { textStyles } = useTheme()
   const footerSize = textStyles?.footer?.fontSize
-  // const underlineColor = useColorModeValue('black', 'white')
+  const underlineColor = useColorModeValue('black', 'white')
   const getYear = new Date().getFullYear()
-  // const anchorStyle: SystemStyleObject = {
-  //   _after: {
-  //     content: '""',
-  //     display: 'block',
-  //     background: 'none repeat scroll 0 0 transparent',
-  //     bottom: 0,
-  //     height: 0.5,
-  //     left: '50%',
-  //     position: 'absolute',
-  //     backgroundColor: underlineColor,
-  //     transition: 'width 0.3s ease 0s, left 0.3s ease 0s',
-  //     width: 0
-  //   },
-  //   _hover: {
-  //     _after: { width: '100%', left: 0 }
-  //   },
-  //   position: 'relative',
-  //   fontWeight: 700,
-  //   target: '_blank',
-  //   textStyle: 'footer',
-  //   display: 'block'
-  // }
 
   return (
     <Stack
@@ -49,15 +28,10 @@ const Footer = () => {
         width='100%'
       >
         <Grid gap={2} templateColumns='repeat(2, 1fr)'>
-          <Link href='https://www.linkedin.com/in/santiago-moyano/' textStyle='footer' width={125}>
-            Santiago Moyano
-          </Link>
-
+          <AnchorContainer content='Santiago Moyano' route='https://www.linkedin.com/in/santiago-moyano/' textStyle='footer' underlineColor={underlineColor} />
           <Text textStyle='footer'>Front End Developer</Text>
           <Text textStyle='footer'>Córdoba, Argentina</Text>
-          <Link href='mailto:smoyano.di@gamil.com' textStyle='footer'>
-            smoyano.di@gmail.com
-          </Link>
+          <AnchorContainer content='smoyano.di@gmail.com' route='mailto:smoyano.di@gmail.com' textStyle='footer' underlineColor={underlineColor} />
         </Grid>
       </Stack>
       <Text fontSize={`calc(${footerSize} / 1.618)`} textAlign='center' textStyle='footer'>

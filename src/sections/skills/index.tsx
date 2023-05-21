@@ -15,6 +15,11 @@ import useArrowKeys from '@/hooks/useArrowKeys'
 
 import ItemSkill from './item'
 
+interface SkillProps {
+  type:string,
+  list:string[]
+}
+
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(0)
   const HEIGHT_TEXT_REF = useRef<HTMLParagraphElement>(null)
@@ -22,6 +27,7 @@ const Skills = () => {
   const ITEM_REF = useRef<HTMLDivElement>(null)
   const float = useFloatAnimation()
   const color = useColorBrand()
+  const skills: SkillProps[] = SKILLS
 
   const [activeIndex] = useArrowKeys({
     arr: SKILLS,
@@ -55,7 +61,7 @@ const Skills = () => {
         <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', md: 'row' }} height='100vh' overflow='hidden'>
           <Title content='skills' refItem={HEIGHT_TEXT_REF} textStyle='h1' titlingScale={1.2} vertical={verticalText} />
           <AnimationContainer animationVariants={containerAnimationVariants} height={height}>
-            {SKILLS?.map((skill, index) => (
+            {skills?.map((skill, index) => (
               <ItemSkill key={skill.type} activeIndex={activeIndex} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
             ))}
             <Text

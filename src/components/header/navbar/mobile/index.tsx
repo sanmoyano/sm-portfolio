@@ -55,10 +55,10 @@ const Mobile = () => {
             width='100%'
           >
             <Stack alignItems='left' gap={8} width='100%'>
-              <Bar />
+              <Bar toggle={handlerMenu} />
             </Stack>
             <Stack alignItems='center' height='100%' justifyContent='center' spacing={6}>
-              <Text fontSize='3.5rem' textAlign='center' textStyle='sectionTitle'>
+              <Text fontFamily='apotek-extrawide' fontSize='3.5rem' textAlign='center' textStyle='sectionTitle' textTransform='uppercase'>
                 get in touch
               </Text>
               <Link _hover={{ textDecorationColor: 'none' }} href='mailto:smoyano.di@gmail.com'>

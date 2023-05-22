@@ -8,9 +8,10 @@ import StarIcon from '@/components/starIcon'
 type NavItemProps = {
   sectionName: string,
   route: string
+  close: () => void
 }
 
-const NavItem = ({ route, sectionName }: NavItemProps) => {
+const NavItem = ({ route, sectionName, close }: NavItemProps) => {
   const [isHovered, setHovered] = useState<boolean>(false)
   const { colors } = useTheme()
   const fill = useColorModeValue(`${colors.black}`, `${colors.white}`)
@@ -21,15 +22,16 @@ const NavItem = ({ route, sectionName }: NavItemProps) => {
         outline: 'none !important',
         border: 'none !important',
         boxShadow: 'none !important'
-      }} _focus={{
+      }}
+      _focus={{
         outline: 'none !important',
         border: 'none !important',
         boxShadow: 'none !important'
-      }}
-      _hover={{ textDecoration: 'none' }}
+      }} _hover={{ textDecoration: 'none' }}
       as={NextLink}
       display='inline-block'
       href={route}
+      onClick={close}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

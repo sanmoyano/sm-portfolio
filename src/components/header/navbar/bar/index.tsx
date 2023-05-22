@@ -5,7 +5,11 @@ import { motion } from 'framer-motion'
 
 import NavItem from '../navItem'
 
-const Bar = () => {
+interface BarProps {
+  toggle: () => void
+}
+
+const Bar = ({ toggle }: BarProps) => {
   const navItems = [
     {
       name: 'home',
@@ -35,7 +39,7 @@ const Bar = () => {
     <>
       {navItems?.map((item, i) => (
         <motion.li key={i} style={{ listStyleType: 'none' }} whileTap={{ scale: 0.95 }}>
-          <NavItem route={item.route} sectionName={item.name} />
+          <NavItem close={toggle} route={item.route} sectionName={item.name} />
         </motion.li>
       ))}
       <IconButton

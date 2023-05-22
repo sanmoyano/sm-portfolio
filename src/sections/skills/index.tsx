@@ -30,7 +30,7 @@ const Skills = () => {
   const float = useFloatAnimation()
   const color = useColorBrand()
   const skills: SkillProps[] = SKILLS
-  const [isLargerThan800] = useMediaQuery('(min-width: 800px)', {
+  const [isLargerThan900] = useMediaQuery('(min-width: 900px)', {
     ssr: true,
     fallback: false
   })
@@ -67,7 +67,7 @@ const Skills = () => {
         <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', lg: 'row' }} height='100vh' overflow='hidden'>
           <Title content='skills' refItem={HEIGHT_TEXT_REF} textStyle='h1' titlingScale={1.2} vertical={verticalText} />
           <AnimationContainer animationVariants={containerAnimationVariants} height={height}>
-            {isLargerThan800
+            {isLargerThan900
               ? (
                   skills?.map((skill, index) => (
                     <ItemSkill key={skill.type} activeIndex={activeIndex} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
@@ -79,7 +79,7 @@ const Skills = () => {
               animation={float}
               bottom={0}
               color={color}
-              display={isLargerThan800 ? 'inline-block' : 'none'}
+              display={isLargerThan900 ? 'inline-block' : 'none'}
               position='absolute'
               textStyle='quotes'
             >

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import NavItem from '../navItem'
 
 interface BarProps {
-  toggle: () => void
+  toggle?: () => void
 }
 
 const Bar = ({ toggle }: BarProps) => {

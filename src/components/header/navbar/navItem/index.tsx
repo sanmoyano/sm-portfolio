@@ -8,7 +8,7 @@ import StarIcon from '@/components/starIcon'
 type NavItemProps = {
   sectionName: string,
   route: string
-  close: () => void
+  close?: () => void
 }
 
 const NavItem = ({ route, sectionName, close }: NavItemProps) => {

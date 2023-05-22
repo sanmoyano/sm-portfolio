@@ -32,7 +32,7 @@ const TabSkills = ({ arr, color }: TabProps) => {
       <TabPanels>
         {arr.map((skill, index) => (
           <TabPanel key={skill.type}>
-            <TextCloud key={index} activeIndex={tabIndex} clouldSize={isLargerThan760 ? 450 : 300} height={400} skills={skill.list} />
+            <TextCloud key={index} activeIndex={tabIndex} clouldSize={isLargerThan760 ? 450 : 250} height={400} skills={skill.list} />
           </TabPanel>
         ))}
       </TabPanels>

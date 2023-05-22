@@ -6,7 +6,7 @@ interface AnimationProps {
   children:React.ReactNode
   animationVariants: Variants
   justifyContent?:string
-  height?:number
+  height?:number | 'auto'
 }
 
 const AnimationContainer = ({ ...props }: AnimationProps) => {

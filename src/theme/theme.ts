@@ -53,7 +53,7 @@ const theme = extendTheme({
     },
     title: {
       fontFamily: '"apotek-extrawide", sans-serif',
-      fontSize: '18rem',
+      fontSize: { base: '5.5rem', md: '9rem', lg: '18rem' },
       textTransform: 'uppercase',
       lineHeight: 1
     },

@@ -16,14 +16,17 @@ const Contact = () => {
     <ParallaxContainer speed={-10}>
       <AnimatePresence>
         <Stack
-          display={{ base: 'none', lg: 'flex' }}
+          display='none'
           height='100%'
           id='contact'
           spacing={12}
           width='100%'
         >
           <Title content='get in touch' textStyle='h1' titlingEnable={false} />
-          <Stack alignItems='center' justifyContent='center' spacing={10} width='100%'>
+          <Stack
+            alignItems='center'
+            justifyContent='center' spacing={10} width='100%'
+          >
             <Link _hover={{ textDecorationColor: 'none' }} href='mailto:smoyano.di@gmail.com'>
               <Tilting scale={1.2}>
                 <Text

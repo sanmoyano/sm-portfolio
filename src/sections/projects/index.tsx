@@ -13,9 +13,9 @@ const Projects = () => {
 
   return (
     <AnimatePresence>
-      <ParallaxContainer speed={-10}>
+      <ParallaxContainer speed={-5}>
         <Box
-          height='100vh'
+          height={{ base: '300px', lg: '100vh' }}
           id='id'
           sx={{ display: 'grid', placeContent: 'center' }}
           width='100%'

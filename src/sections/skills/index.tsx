@@ -62,11 +62,11 @@ const Skills = () => {
   }
 
   return (
-    <ParallaxContainer speed={15}>
+    <ParallaxContainer speed={5}>
       <AnimatePresence>
-        <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', lg: 'row' }} height='100vh' overflow='hidden'>
+        <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', lg: 'row' }} height={{ base: 'auto', lg: '100vh' }} overflow='hidden'>
           <Title content='skills' refItem={HEIGHT_TEXT_REF} textStyle='h1' titlingScale={1.2} vertical={verticalText} />
-          <AnimationContainer animationVariants={containerAnimationVariants} height={height}>
+          <AnimationContainer animationVariants={containerAnimationVariants} height={isLargerThan900 ? height : 'auto'}>
             {isLargerThan900
               ? (
                   skills?.map((skill, index) => (

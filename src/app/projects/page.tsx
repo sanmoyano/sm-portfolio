@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useRef } from 'react'
 import { NextPage } from 'next'
-import { Text, Stack } from '@chakra-ui/react'
+import { Text, Stack, useMediaQuery } from '@chakra-ui/react'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -26,6 +26,10 @@ const Projects : NextPage = () => {
   const color = useColorBrand()
   const projects: ProjectsData[] = PROJECTS
   const calcDelayAnimation = projects.length * 0.65
+  const [isLargerThan900] = useMediaQuery('(min-width: 900px)', {
+    ssr: true,
+    fallback: false // return false on the server, and re-evaluate on the client side
+  })
 
   const containerAnimationVariants = {
     hidden: { opacity: 0 },
@@ -61,6 +65,7 @@ const Projects : NextPage = () => {
           as={motion.div}
           bottom={0}
           color={color}
+          display={isLargerThan900 ? 'inline-block' : 'none'}
           initial='hidden'
           paddingLeft={{ base: 6, md: 12 }}
           textStyle='quotes'

@@ -4,6 +4,7 @@ import { Stack, Text } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
 import useColorBrand from '@/hooks/useColorBrand'
+import OutlineText from '@/components/outlineText'
 
 const DynamicTextCloud = dynamic(() => import('../../../components/textCloud'))
 
@@ -33,20 +34,7 @@ const ItemSkill = ({ ...props }: SkillProps) => {
         variants={animationVariant}
         width='100%'
       >
-        <Text
-          color={active ? `${color}` : 'transparent'}
-          display='inline-block'
-          height='100%'
-          sx={{ WebkitTextStroke: active ? 'none' : `1px ${color}` }}
-          textAlign='center'
-          textStyle='h2'
-          transitionDelay='0s, 0s'
-          transitionDuration='.5s, .5s'
-          transitionProperty='color, opacity'
-          transitionTimingFunction='ease, ease'
-        >
-          {skillType}
-        </Text>
+        <OutlineText active={active} color={color} content={skillType} />
       </Stack>
       <motion.div initial='hidden' variants={{ visible: { opacity: 1, transition: { duration: 3, delay: 2.5 } }, hidden: { opacity: 0 } }} viewport={{ once: true }} whileInView='visible'>
         {active && (

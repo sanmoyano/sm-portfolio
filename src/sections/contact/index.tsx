@@ -16,7 +16,7 @@ const Contact = () => {
     <ParallaxContainer speed={-10}>
       <AnimatePresence>
         <Stack
-          display='none'
+          display={{ base: 'none', lg: 'flex' }}
           height='100%'
           id='contact'
           spacing={12}

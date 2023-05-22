@@ -78,6 +78,7 @@ const ProjectItem = ({ name, page, repo, index, activeIndex, animationVariant }:
             )
           : (
             <Link
+              _hover={{ textDecoration: 'none' }}
               display='inline-block'
               fontFamily='apotek-extrawide' fontSize={{ base: '4rem', md: '6rem' }} href={page} lineHeight={0.7}
               marginTop={1} target='_blank' textAlign='left' textTransform='uppercase'

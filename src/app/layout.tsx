@@ -8,7 +8,7 @@ import Providers from './providers'
 
 export const metadata: Metadata = {
   title: 'Santiago Moyano - Frontend Developer & Designer',
-  description: 'Soy un apasionado desarrollador frontend y diseñador con experiencia en ReactJS, HTML5, CSS3 y JavaScript. Combino habilidades técnicas y creativas para crear experiencias digitales excepcionales. Explora mi portfolio para descubrir proyectos destacados.'
+  description: 'I am a passionate frontend developer with experience in industrial design. My focus is on creating exceptional digital experiences using technologies such as ReactJS, HTML5, CSS3, and JavaScript. My unique combination of technical and creative skills allows me to design attractive and functional interfaces while developing innovative web solutions. Explore my portfolio to discover standout projects..'
 }
 
 export default function RootLayout ({

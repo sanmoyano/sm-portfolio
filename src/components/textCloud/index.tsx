@@ -7,8 +7,9 @@ interface TextCloudProps {
   activeIndex: number
   height: number,
   skills:string[]
+  clouldSize:number
 }
-const TextCloud = ({ activeIndex, height, skills }: TextCloudProps) => {
+const TextCloud = ({ activeIndex, height, skills, clouldSize }: TextCloudProps) => {
   const isVisible = activeIndex >= 0 && activeIndex <= 2
 
   return (
@@ -21,7 +22,8 @@ const TextCloud = ({ activeIndex, height, skills }: TextCloudProps) => {
       initial='hidden'
       justifyContent='center'
       marginTop='0px !important'
-      position='absolute'
+      paddingTop={{ base: '30xp', md: '100px', lg: '0px' }}
+      position={{ base: 'relative', lg: 'absolute' }}
       right={0}
       textStyle='cloud'
       top={0}
@@ -41,7 +43,7 @@ const TextCloud = ({ activeIndex, height, skills }: TextCloudProps) => {
     >
       <TagCloud
         options={(w: Window & typeof globalThis): TagCloudOptions => ({
-          radius: Math.min(400, w.innerWidth, w.innerHeight) / 2,
+          radius: Math.min(clouldSize, w.innerWidth, w.innerHeight) / 2,
           maxSpeed: 'normal',
           initSpeed: 'normal',
           keep: true

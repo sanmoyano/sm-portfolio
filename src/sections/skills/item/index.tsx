@@ -38,7 +38,7 @@ const ItemSkill = ({ ...props }: SkillProps) => {
       </Stack>
       <motion.div initial='hidden' variants={{ visible: { opacity: 1, transition: { duration: 3, delay: 2.5 } }, hidden: { opacity: 0 } }} viewport={{ once: true }} whileInView='visible'>
         {active && (
-          <DynamicTextCloud activeIndex={activeIndex} height={height} skills={skills} />
+          <DynamicTextCloud activeIndex={activeIndex} clouldSize={400} height={height} skills={skills} />
         )}
       </motion.div>
     </AnimatePresence>

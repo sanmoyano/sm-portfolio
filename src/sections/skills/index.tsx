@@ -1,5 +1,6 @@
+'use client'
 import React, { useRef, useState } from 'react'
-import { Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useMediaQuery } from '@chakra-ui/react'
+import { Stack, Text, useMediaQuery } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 
@@ -12,6 +13,7 @@ import useFloatAnimation from '@/hooks/useFloatAnimation'
 import SKILLS from '@/data/skills.json'
 import useColorBrand from '@/hooks/useColorBrand'
 import useArrowKeys from '@/hooks/useArrowKeys'
+import TabSkills from '@/components/tabSkill'
 
 import ItemSkill from './item'
 
@@ -30,7 +32,7 @@ const Skills = () => {
   const skills: SkillProps[] = SKILLS
   const [isLargerThan800] = useMediaQuery('(min-width: 800px)', {
     ssr: true,
-    fallback: false // return false on the server, and re-evaluate on the client side
+    fallback: false
   })
 
   const [activeIndex] = useArrowKeys({
@@ -70,7 +72,9 @@ const Skills = () => {
                   skills?.map((skill, index) => (
                     <ItemSkill key={skill.type} activeIndex={activeIndex} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
                   )))
-              : (undefined)}
+              : (
+                <TabSkills arr={skills} color={color} />
+                )}
             <Text
               animation={float}
               bottom={0}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Text } from '@chakra-ui/react'
 
 interface TextProps {
-  active: boolean
+  active: boolean | number
   color: string
   content: string
 }

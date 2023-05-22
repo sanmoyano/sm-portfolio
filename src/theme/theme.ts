@@ -58,7 +58,7 @@ const theme = extendTheme({
       lineHeight: 1
     },
     h2: {
-      fontSize: '12rem',
+      fontSize: { base: '2rem', lg: '12rem' },
       fontWeight: 700,
       lineHeight: 0.8,
       textTransform: 'uppercase'
@@ -85,7 +85,7 @@ const theme = extendTheme({
     },
     cloud: {
       fontFamily: '"apotek-extrawide", sans-serif',
-      fontSize: 'calc(4rem / 1.618)'
+      fontSize: { base: '2rem', md: 'calc(4rem / 1.618)' }
     },
     logo: {
       fontFamily: '"apotek-extrawide", sans-serif',

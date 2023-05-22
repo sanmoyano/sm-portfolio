@@ -46,7 +46,6 @@ const TextCloud = ({ activeIndex, height, skills }: TextCloudProps) => {
           initSpeed: 'normal',
           keep: true
         })}
-        onClick={(tag: string, ev: MouseEvent) => alert(tag)}
         onClickOptions={{ passive: true }}
       >
         {skills}

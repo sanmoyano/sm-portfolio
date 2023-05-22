@@ -11,7 +11,6 @@ const OutlineText = ({ active, color, content }: TextProps) => {
   return (
     <Text
       color={active ? `${color}` : 'transparent'}
-      display={{ base: 'none', lg: 'inline-block' }}
       height='100%'
       sx={{ WebkitTextStroke: active ? 'none' : `1px ${color}` }}
       textAlign='center'

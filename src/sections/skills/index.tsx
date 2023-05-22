@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Stack, Text } from '@chakra-ui/react'
+import { Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useMediaQuery } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 
@@ -28,6 +28,10 @@ const Skills = () => {
   const float = useFloatAnimation()
   const color = useColorBrand()
   const skills: SkillProps[] = SKILLS
+  const [isLargerThan800] = useMediaQuery('(min-width: 800px)', {
+    ssr: true,
+    fallback: false // return false on the server, and re-evaluate on the client side
+  })
 
   const [activeIndex] = useArrowKeys({
     arr: SKILLS,
@@ -58,16 +62,20 @@ const Skills = () => {
   return (
     <ParallaxContainer speed={15}>
       <AnimatePresence>
-        <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', md: 'row' }} height='100vh' overflow='hidden'>
+        <Stack ref={ITEM_REF} alignItems='center' direction={{ base: 'column', lg: 'row' }} height='100vh' overflow='hidden'>
           <Title content='skills' refItem={HEIGHT_TEXT_REF} textStyle='h1' titlingScale={1.2} vertical={verticalText} />
           <AnimationContainer animationVariants={containerAnimationVariants} height={height}>
-            {skills?.map((skill, index) => (
-              <ItemSkill key={skill.type} activeIndex={activeIndex} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
-            ))}
+            {isLargerThan800
+              ? (
+                  skills?.map((skill, index) => (
+                    <ItemSkill key={skill.type} activeIndex={activeIndex} animationVariant={itemAnimationVariants} height={height} index={index} skillType={skill.type} skills={skill.list} />
+                  )))
+              : (undefined)}
             <Text
               animation={float}
               bottom={0}
               color={color}
+              display={isLargerThan800 ? 'inline-block' : 'none'}
               position='absolute'
               textStyle='quotes'
             >

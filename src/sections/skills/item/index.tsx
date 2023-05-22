@@ -1,6 +1,6 @@
 import React from 'react'
 import { Variants, AnimatePresence, motion } from 'framer-motion'
-import { Stack, Text } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
 import useColorBrand from '@/hooks/useColorBrand'

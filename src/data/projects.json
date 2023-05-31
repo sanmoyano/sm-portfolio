@@ -6,8 +6,8 @@
   }, 
   {
     "name":"dev finder",
-    "page":"https://github-search-app-six.vercel.app/",
-    "repo":"https://github.com/sanmoyano/github-search-app"
+    "page":"https://dev-finder-topaz.vercel.app/",
+    "repo":"https://github.com/sanmoyano/dev-finder.git"
   },
   {
     "name":"fmtm ecommerce",

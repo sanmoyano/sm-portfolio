@@ -17,7 +17,7 @@ const Bar = ({ toggle }: BarProps) => {
     },
     {
       name: 'projects',
-      route: '/projects'
+      route: '#projects'
     }
     // {
     //   name: 'about',

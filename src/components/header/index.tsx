@@ -46,7 +46,7 @@ const Header = () => {
       viewport={{ once: true }}
       whileInView={{ opacity: 1, transition: { duration: 3 } }}
       width='100%'
-      zIndex={9}
+      zIndex={999}
     >
       <Logo />
       <SpringScroll />

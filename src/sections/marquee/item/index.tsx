@@ -27,7 +27,7 @@ const LineItem = ({ content, style, direction }: LineItemProps) => {
         x: {
           repeat: Infinity,
           repeatType: 'loop',
-          duration: 120,
+          duration: 30,
           ease: 'easeInOut'
 
         }
@@ -39,7 +39,7 @@ const LineItem = ({ content, style, direction }: LineItemProps) => {
         y: {
           repeat: Infinity,
           repeatType: 'loop',
-          duration: 120,
+          duration: 30,
           ease: 'easeInOut'
         }
       }

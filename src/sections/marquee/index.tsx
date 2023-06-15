@@ -50,7 +50,7 @@ const Marquee = () => {
             <Text
               fontWeight={700}
               lineHeight={1}
-              textAlign='justify'
+              // textAlign='justify'
               textStyle='caption'
               textTransform='uppercase'
             >
@@ -64,7 +64,7 @@ const Marquee = () => {
                 lg: calcFontSize(captionSize?.lg)
               }}
               lineHeight={1}
-              textAlign='justify'
+              // textAlign='justify'
               textTransform='uppercase'
             >
               and explore unique UX/UI solutions for the users.

@@ -21,7 +21,7 @@ const Home : NextPage = () => {
         <Stack gap={{ base: 20, md: 40 }} paddingInline={{ base: 6, lg: 12 }}>
           <Hero />
           <Marquee />
-          <About />
+          {/* <About /> */}
           <Projects />
           <Skills />
           <Contact />

@@ -53,7 +53,7 @@ const ProjectItem = ({ name, page, repo, index, activeIndex, animationVariant }:
                 borderColor='none'
                 color={active ? `${colorTitle}` : 'transparent'}
                 display='inline-block' fontFamily='apotek-extrawide'
-                fontSize='9rem'
+                fontSize='8rem'
                 href={page}
                 lineHeight={0.7}
                 sx={{ WebkitTextStroke: active ? 'none' : `1px ${colorTitle}` }}

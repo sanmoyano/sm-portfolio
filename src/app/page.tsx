@@ -6,7 +6,7 @@ import { Stack } from '@chakra-ui/react'
 import Hero from '@/sections/hero'
 import Marquee from '@/sections/marquee'
 import Projects from '@/sections/projects'
-import About from '@/sections/about'
+// import About from '@/sections/about'
 import Skills from '@/sections/skills'
 import Contact from '@/sections/contact'
 

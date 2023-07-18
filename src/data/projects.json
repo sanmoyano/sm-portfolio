@@ -1,5 +1,10 @@
 [
   {
+    "name":"msn chatroom",
+    "page":"https://msn-chatroom.vercel.app/",
+    "repo":"https://github.com/sanmoyano/chat-room.git"
+  }, 
+  {
     "name":"fmtm faber",
     "page":"https://www.fermentumfaber.com/",
     "repo":"https://github.com/sanmoyano/fermentum-faber-2023"

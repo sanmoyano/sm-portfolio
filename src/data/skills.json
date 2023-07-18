@@ -2,44 +2,44 @@
   {
     "type": "main",
     "list": [
-      "ReactJs",
-      "JavaScript",
-      "Html",
-      "Css",
-      "Scss",
-      "Framer motion",
-      "Chakra UI",
-      "Material UI",
-      "Firebase",
-      "Cypress",
-      "Figma"
+      "ReactJs ",
+      "JavaScript ",
+      "Html ",
+      "Css ",
+      "Scss ",
+      "Framer motion ",
+      "Chakra UI ",
+      "Material UI ",
+      "Firebase ",
+      "Figma ",
+      "typescript ",
+      "NextJs "
     ]
   },
   {
     "type": "upskilling",
     "list": [
-      "TypeScript",
-      "React Native",
-      "NodeJs",
-      "Mongo DB",
-      "Express",
-      "NextJs",
-      "SQL",
-      "DBAAS",
-      "GraphQL",
-      "Apollo GraphQL"
+      "React Native ",
+      "NodeJs ",
+      "Cypress " ,
+      "Mongo DB ",
+      "Express ",
+      "SQL ",
+      "DBAAS ",
+      "GraphQL ",
+      "Apollo GraphQL "
     ]
   },
   {
     "type": "others",
     "list": [
-      "Git",
-      "GitHub",
-      "Azure DevOps",
-      "ESLint",
-      "Style-components",
-      "Illustrator",
-      "Pothoshop"
+      "Git ",
+      "GitHub ",
+      "Azure DevOps ",
+      "ESLint ",
+      "Style-components ",
+      "Illustrator ",
+      "Pothoshop "
     ]
   }
 ]

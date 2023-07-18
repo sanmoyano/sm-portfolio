@@ -1,12 +1,12 @@
 import React from 'react'
 import { Variants, AnimatePresence, motion } from 'framer-motion'
-import { Stack } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
+import { Stack, Text } from '@chakra-ui/react'
+// import dynamic from 'next/dynamic'
 
 import useColorBrand from '@/hooks/useColorBrand'
 import OutlineText from '@/components/outlineText'
 
-const DynamicTextCloud = dynamic(() => import('../../../components/textCloud'))
+// const DynamicTextCloud = dynamic(() => import('../../../components/textCloud'))
 
 interface SkillProps {
   activeIndex: number,
@@ -18,9 +18,11 @@ interface SkillProps {
 }
 
 const ItemSkill = ({ ...props }: SkillProps) => {
-  const { activeIndex, animationVariant, height, index, skillType, skills } = props
+  const { activeIndex, animationVariant, index, skillType, skills } = props
   const active = activeIndex === index
   const color = useColorBrand()
+
+  const isVisible = activeIndex >= 0 && activeIndex <= 2
 
   return (
     <AnimatePresence>
@@ -35,12 +37,33 @@ const ItemSkill = ({ ...props }: SkillProps) => {
         width='100%'
       >
         <OutlineText active={active} color={color} content={skillType} />
+        <motion.div initial='hidden' variants={{ visible: { opacity: 1, transition: { duration: 3, delay: 2.5 } }, hidden: { opacity: 0 } }} viewport={{ once: true }} whileInView='visible'>
+          {active && (
+            <Stack
+              animate={isVisible ? 'visible' : 'hidden'}
+              as={motion.div}
+              exit='hidden'
+              initial='hidden'
+              variants={{
+                visible: {
+                  opacity: 1,
+                  transition: { duration: 1, delay: 0.2 }
+                },
+                hidden: {
+                  opacity: 0,
+                  transition: { duration: 0.2 }
+                }
+              }}
+              zIndex={99}
+            >
+              <Text textStyle='quotes'>
+                {skills}
+              </Text>
+            </Stack>
+
+          )}
+        </motion.div>
       </Stack>
-      <motion.div initial='hidden' variants={{ visible: { opacity: 1, transition: { duration: 3, delay: 2.5 } }, hidden: { opacity: 0 } }} viewport={{ once: true }} whileInView='visible'>
-        {active && (
-          <DynamicTextCloud activeIndex={activeIndex} clouldSize={400} height={height} skills={skills} />
-        )}
-      </motion.div>
     </AnimatePresence>
   )
 }

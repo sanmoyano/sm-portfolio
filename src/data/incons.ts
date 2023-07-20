@@ -1,4 +1,4 @@
-import { faGithub, faLinkedinIn, faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 export const icons: { icon:IconDefinition; url:string }[] = [

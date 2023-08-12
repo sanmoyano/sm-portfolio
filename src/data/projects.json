@@ -1,9 +1,14 @@
 [
   {
+    "name":"moodflix",
+    "page":"https://moodflix.vercel.app/",
+    "repo":"https://github.com/sanmoyano"
+  }, 
+   {
     "name":"msn chatroom",
     "page":"https://msn-chatroom.vercel.app/",
     "repo":"https://github.com/sanmoyano/chat-room.git"
-  }, 
+  },
   {
     "name":"fmtm faber",
     "page":"https://www.fermentumfaber.com/",
